@@ -92,12 +92,8 @@ namespace CommercialFirm.Views
 
                     filteredClients = new ObservableCollection<Client>(
                         clients.Where(x =>
-                            x.Surname.ToLower().Contains(searchText) ||
-                            x.Name.ToLower().Contains(searchText) ||
-                            x.Patronymic.ToLower().Contains(searchText) ||
                             x.Address.ToLower().Contains(searchText) ||
-                            x.NumberPhone.ToLower().Contains(searchText) ||
-                            x.Model.Name.ToString().ToLower().Contains(searchText)
+                            x.NumberPhone.ToLower().Contains(searchText)
                         )
                     );
                 }

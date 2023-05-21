@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CommercialFirm.Classes;
 
 namespace CommercialFirm.Views
 {
@@ -29,10 +30,16 @@ namespace CommercialFirm.Views
         {
             InitializeComponent();
 
-            orders = new ObservableCollection<Order>(DBConnect.connectDB.Order.ToList());
+
+            orders = new ObservableCollection<Order>(DBConnect.connectDB.Order.ToList()) ;
             filteredOrders = orders;
             GridListOrders.ItemsSource = filteredOrders;
             GridListOrders.CanUserAddRows = false;
+        }
+
+        private void BtnAddOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationClass.frmNav.Navigate(new AddEditOrder(null));
         }
     }
 }

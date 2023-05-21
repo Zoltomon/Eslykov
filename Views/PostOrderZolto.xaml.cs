@@ -31,8 +31,6 @@ namespace CommercialFirm.Views
         {
             try
             {
-
-
                 Supplier sup = new Supplier()
                 {
                     Name = TxbNameSup.Text,

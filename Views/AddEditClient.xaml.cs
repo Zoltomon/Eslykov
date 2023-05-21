@@ -34,11 +34,7 @@ namespace CommercialFirm.Views
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (string.IsNullOrWhiteSpace(_currentClient.Surname))
-                errors.AppendLine("Укажите фамилию");
-            if (string.IsNullOrWhiteSpace(_currentClient.Name))
-                errors.AppendLine("Укажите имя");
-            if (string.IsNullOrWhiteSpace(_currentClient.Patronymic))
+            if (string.IsNullOrWhiteSpace(_currentClient.FIO))
                 errors.AppendLine("Укажите отчество");
             if (string.IsNullOrWhiteSpace(_currentClient.NumberPhone))
                 errors.AppendLine("Укажите номер телефона");

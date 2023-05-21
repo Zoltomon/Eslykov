@@ -9,6 +9,29 @@
       Title="AddEditOrder">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="600*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="0"  Text="Клиент"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="1" Text="Стоимость"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="2" Text="Модель"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="3" Text="Статус"/>
+        <ComboBox Grid.Column="1" Grid.Row="0" Name="ComboClient"/>
+        <ComboBox Grid.Column="1" Grid.Row="4" Name="ComboPrice"/>
+        <ComboBox Grid.Column="1" Grid.Row="5" Name="ComboModels"/>
+        <ComboBox Grid.Column="1" Grid.Row="6" Name="ComboStatus"/>
+        <Button Name="BtnSave" Click="BtnSave_Click" Grid.Row="7" Grid.ColumnSpan="2" Content="Сохранить"/>
     </Grid>
 </Page>

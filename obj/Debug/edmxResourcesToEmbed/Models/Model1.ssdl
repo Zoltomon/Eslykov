@@ -5,12 +5,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NumberPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="idModel" Type="int" />
   </EntityType>
   <EntityType Name="Fuel">
     <Key>
@@ -95,18 +92,6 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Client_Model">
-    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
-    <End Role="Client" Type="Self.Client" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Model">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Client">
-        <PropertyRef Name="idModel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Model_Fuel">
     <End Role="Fuel" Type="Self.Fuel" Multiplicity="1" />
     <End Role="Model" Type="Self.Model" Multiplicity="*" />
@@ -226,10 +211,6 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Transmission" EntityType="Self.Transmission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Upholstery" EntityType="Self.Upholstery" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Client_Model" Association="Self.FK_Client_Model">
-      <End Role="Model" EntitySet="Model" />
-      <End Role="Client" EntitySet="Client" />
-    </AssociationSet>
     <AssociationSet Name="FK_Model_Fuel" Association="Self.FK_Model_Fuel">
       <End Role="Fuel" EntitySet="Fuel" />
       <End Role="Model" EntitySet="Model" />

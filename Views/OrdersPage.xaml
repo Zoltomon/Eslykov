@@ -18,9 +18,7 @@
         </Grid>
         <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="GridListOrders" Grid.Row="0" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Client.Surname}"/>
-                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Client.Name}"/>
-                <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Client.Patronymic}"/>
+                <DataGridTextColumn Header="ФИО" Width="*" Binding="{Binding Client.FIO}"/>
                 <DataGridTextColumn Header="Номер договора" Width="*" Binding="{Binding PriceList.ContractNumber}"/>
                 <DataGridTextColumn Header="Модель" Width="*" Binding="{Binding Model.Name}"/>
                 <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status.Type}"/>
@@ -36,7 +34,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="1">
-            <Button Content="Добавить заказ" Height="30" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 20 0 0">
+            <Button Content="Добавить заказ" Height="30" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 20 0 0" Name="BtnAddOrder" Click="BtnAddOrder_Click">
 
             </Button>
             <TextBox Height="30" Width="400" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50 20 0 0" Name="TxbSearch"  Tag="Поиск">
