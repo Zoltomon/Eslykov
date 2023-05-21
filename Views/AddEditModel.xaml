@@ -1,0 +1,44 @@
+﻿<Page x:Class="CommercialFirm.Views.AddEditModel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CommercialFirm.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditModel">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="600*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="0"  Text="Поставщик"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="1" Text="Наименование модели"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="2" Text="Цвет"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="3" Text="Мощность в л.с."/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="4" Text="Обивка"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="5" Text="Коробка передач"/>
+        <TextBlock Margin="50 0 0 0" VerticalAlignment="Center" Foreground="White" Grid.Row="6" Text="Тип топлива"/>
+        <ComboBox Grid.Column="1" Grid.Row="0" Name="ComboSupplier"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="TxbNameModel"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="TxbColor"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Name="TxbEP"/>
+        <ComboBox Grid.Column="1" Grid.Row="4" Name="ComboUpholstery"/>
+        <ComboBox Grid.Column="1" Grid.Row="5" Name="ComboTransmission"/>
+        <ComboBox Grid.Column="1" Grid.Row="6" Name="ComboFuel"/>
+        <Button Grid.Row="7" Grid.Column="1" Height="40" Width="200" Content="Сохранить" Name="BtnSave" Click="BtnSave_Click"/>
+
+    </Grid>
+</Page>

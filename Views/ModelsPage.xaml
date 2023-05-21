@@ -1,0 +1,51 @@
+﻿<Page x:Class="CommercialFirm.Views.ModelsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CommercialFirm.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ModelsPage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="373*"/>
+            <RowDefinition Height="77*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5 0 0 0">
+
+        </Grid>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="GridListModels" Grid.Row="0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Поставщик" Width="*" Binding="{Binding Supplier.Name}"/>
+                <DataGridTextColumn Header="Модель" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Цвет" Width="*" Binding="{Binding Color}"/>
+                <DataGridTextColumn Header="Обивка" Width="*" Binding="{Binding Upholstery.Type}"/>
+                <DataGridTextColumn Header="Мощность в л.с." Width="*" Binding="{Binding EnginePower}"/>
+                <DataGridTextColumn Header="Коробка передач" Width="*" Binding="{Binding Transmission.Type}"/>
+                <DataGridTextColumn Header="Топливо" Width="*" Binding="{Binding Fuel.Type}"/>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать">
+
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <Button Content="Добавить модель" Name="AddModel" Click="AddModel_Click" Height="30" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 20 0 0">
+
+            </Button>
+            <TextBox Height="30" Width="400" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50 20 0 0" Name="TxbSearch" TextChanged="TxbSearch_TextChanged"  Tag="Поиск">
+
+            </TextBox>
+            <Button Height="30" Content="Удалить" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 20 0 0" Name="BtnDelete" Click="BtnDelete_Click">
+
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
